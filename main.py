@@ -31,6 +31,24 @@ class color:
             
         return color(R, G, B, 1)
 
+    def __sub__(self, OtherColor):
+
+        #subtracting colors, each part of color by itself, multiplying it on alpha. Alpha of final color is 1
+        
+        A1 = self.A; A2 = OtherColor.A
+        
+        R = int(self.R * A1 - OtherColor.R * A2)
+        if R < 0:
+            R = 0
+        G = int(self.G * A1 - OtherColor.G * A2)
+        if G < 0:
+            G = 0
+        B = int(self.B * A1 - OtherColor.B * A2)
+        if B < 0:
+            B = 0
+            
+        return color(R, G, B, 1)
+
     def __mul__(self, OtherColor):
 
         #multiplying colors, Alpha of color maters how much color channel will matter on result. Alpha of final color is 1
