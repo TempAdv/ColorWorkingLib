@@ -126,3 +126,14 @@ class color:
 
     def oposite(self):
         return(color(255 - self.R, 255 - self.G, 255 - self.B, self.A))
+
+def AverageColor(*args):
+    R = 0; G = 0; B= 0
+    L = len(args)
+    for Color in args:
+
+        R += Color.R * Color.A / L
+        G += Color.G * Color.A / L
+        B += Color.B * Color.A / L
+
+    return(color(int(R), int(G), int(B), 1))
