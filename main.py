@@ -51,6 +51,8 @@ class color:
 
     def __mul__(self, Other):
 
+        #if type == int then myltiplying color channels on it
+
         if type(Other) == type(1):
 
             R = int(self.R * Other)
@@ -85,6 +87,8 @@ class color:
 
     def __truediv__(self, Other):
 
+        #if type == int then dividing color channels on it
+
         if type(Other) == type(1):
 
             R = int(self.R / Other)
@@ -107,7 +111,7 @@ class color:
 
             return color(R, G, B, self.A)
 
-        #multiplying colors, Alpha of color maters how much color channel will matter on result. Alpha of final color is 1
+        #dividing colors, Alpha of color maters how much color channel will matter on result. Alpha of final color is 1
         
         A1 = self.A; A2 = Other.A
         
@@ -119,3 +123,6 @@ class color:
 
     def __str__(self):
         return f'{self.R}, {self.G}, {self.B}, {self.A}'
+
+    def oposite(self):
+        return(color(255 - self.R, 255 - self.G, 255 - self.B, self.A))
