@@ -128,6 +128,9 @@ class color:
         return(color(255 - self.R, 255 - self.G, 255 - self.B, self.A))
 
 def AverageColor(*args):
+
+    #finding average of each channel, Alpha of color maters
+
     R = 0; G = 0; B= 0
     L = len(args)
     for Color in args:
