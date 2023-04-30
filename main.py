@@ -127,11 +127,15 @@ class color:
     def oposite(self):
         return(color(255 - self.R, 255 - self.G, 255 - self.B, self.A))
 
+    #return PIL format of color
+    def PilF(self):
+        return((self.R, self.G, self.B, self.A*255))
+
 def AverageColor(*args):
 
     #finding average of each channel, Alpha of color maters
 
-    R = 0; G = 0; B= 0
+    R = 0; G = 0; B = 0
     L = len(args)
     for Color in args:
 
