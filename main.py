@@ -127,6 +127,12 @@ class color:
     def oposite(self):
         return(color(255 - self.R, 255 - self.G, 255 - self.B, self.A))
 
+
+    #return monochrome variant of color
+    def Gray(self):
+        canal = int((self.R  + self.G + self.B)/3) 
+        return(color(canal, canal, canal, self.A))
+
     #return PIL format of color
     def PilF(self):
         return((self.R, self.G, self.B, self.A*255))
